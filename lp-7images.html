@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codex完全セミナー | 5月16日限定</title>
+  <meta name="description" content="Codex教材購入者限定セミナー。Codexを知って終わる人から、発信・販売・自動化を実務に落とし込み、結果につなげる人へ。">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="preload" as="image" href="assets/lp-hero-top.png" imagesrcset="assets/lp-hero-top.png">
+  <style>
+    :root {
+      --bg: #030207;
+      --panel: #090411;
+      --ink: #fff7ff;
+      --muted: #d9c7e8;
+      --violet: #b300ff;
+      --violet-soft: #8b38ff;
+      --gold: #ffe9a8;
+      --line: rgba(203, 99, 255, .48);
+      --max: 864px;
+      --radius: 8px;
+      font-family: "Yu Mincho", "Hiragino Mincho ProN", "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 50% -8rem, rgba(179, 0, 255, .32), transparent 28rem),
+        radial-gradient(circle at 10% 26rem, rgba(130, 56, 255, .18), transparent 26rem),
+        radial-gradient(circle at 92% 62rem, rgba(203, 99, 255, .14), transparent 30rem),
+        linear-gradient(180deg, #05020a 0%, #020104 100%);
+      min-width: 320px;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      border: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+      width: 100%;
+      max-width: 100%;
+      padding-bottom: calc(92px + env(safe-area-inset-bottom));
+      overflow-x: hidden;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+      background: rgba(3, 2, 7, .84);
+      backdrop-filter: blur(16px);
+      overflow: hidden;
+    }
+
+    .topbar__inner {
+      width: calc(100% - 24px);
+      max-width: var(--max);
+      min-height: 56px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
+    .topbar__cta {
+      position: relative;
+      overflow: hidden;
+      min-height: 36px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 14px;
+      border: 1px solid rgba(255, 233, 168, .7);
+      border-radius: 999px;
+      background: linear-gradient(135deg, rgba(179, 0, 255, .92), rgba(88, 31, 174, .92));
+      box-shadow: 0 0 22px rgba(179, 0, 255, .38);
+      color: #fff;
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .topbar__cta::after {
+      content: "";
+      position: absolute;
+      inset: -40% -80%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .72), transparent);
+      transform: translateX(-70%) rotate(18deg);
+      animation: shine 2.8s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .lp-stack {
+      width: 100%;
+      max-width: min(var(--max), 100%);
+      margin: 0 auto;
+      background: #000;
+      box-shadow: 0 0 90px rgba(179, 0, 255, .2);
+    }
+
+    .lp-section {
+      position: relative;
+      margin: 0;
+      background: #000;
+    }
+
+    .lp-section + .lp-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 5%;
+      right: 5%;
+      height: 1px;
+      z-index: 2;
+      background: linear-gradient(90deg, transparent, rgba(222, 137, 255, .9), transparent);
+      box-shadow: 0 0 18px rgba(179, 0, 255, .72);
+      pointer-events: none;
+    }
+
+    .lp-image {
+      width: 100%;
+      background: #000;
+    }
+
+    .cta-image-link {
+      position: relative;
+      z-index: 3;
+      display: block;
+      margin: 0 auto;
+      border-radius: 999px;
+      background: #000;
+      filter: drop-shadow(0 0 22px rgba(179, 0, 255, .72));
+      transform: translateY(0);
+      transition: transform .18s ease, filter .18s ease;
+      animation: ctaFloat 2.1s ease-in-out infinite;
+    }
+
+    .cta-image-link.hero {
+      width: 90%;
+    }
+
+    .cta-image-link.offer {
+      width: 72%;
+    }
+
+    .cta-image-link img {
+      width: 100%;
+      height: auto;
+    }
+
+    .cta-image-link:hover {
+      filter: drop-shadow(0 0 36px rgba(220, 84, 255, .96));
+      transform: translateY(-2px);
+    }
+
+    .cta-image-link:active {
+      transform: translateY(1px) scale(.995);
+    }
+
+    .cta-image-link:focus-visible {
+      outline: 3px solid rgba(255, 233, 168, .95);
+      outline-offset: 5px;
+    }
+
+    @keyframes ctaFloat {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-3px);
+      }
+    }
+
+    .final-action {
+      width: calc(100% - 24px);
+      max-width: var(--max);
+      margin: 22px auto 0;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(179, 0, 255, .22), rgba(255, 233, 168, .08)),
+        rgba(9, 4, 17, .86);
+      box-shadow: 0 0 38px rgba(179, 0, 255, .18);
+      text-align: center;
+    }
+
+    .final-action__copy {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      font-size: clamp(14px, 3.6vw, 18px);
+      font-weight: 800;
+      line-height: 1.6;
+    }
+
+    .button {
+      position: relative;
+      overflow: hidden;
+      width: min(560px, 100%);
+      min-height: 62px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 22px;
+      border: 1px solid rgba(255, 255, 255, .8);
+      border-radius: 999px;
+      background:
+        linear-gradient(180deg, rgba(235, 98, 255, .98), rgba(119, 0, 215, .98));
+      box-shadow:
+        inset 0 2px 0 rgba(255, 255, 255, .38),
+        0 0 34px rgba(179, 0, 255, .72);
+      color: #fff;
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      font-size: clamp(18px, 5vw, 28px);
+      font-weight: 900;
+      letter-spacing: 0;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, .32);
+      transform: translateY(0);
+      transition: transform .18s ease, filter .18s ease, box-shadow .18s ease;
+      animation: pulseGlow 2.2s ease-in-out infinite;
+    }
+
+    .button::before {
+      content: ">>";
+      margin-right: .7em;
+      color: rgba(255, 255, 255, .88);
+      animation: arrowNudge 1.15s ease-in-out infinite;
+    }
+
+    .button::after {
+      content: "";
+      position: absolute;
+      inset: -60% -90%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .6), transparent);
+      transform: translateX(-72%) rotate(16deg);
+      animation: shine 2.6s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .button:hover {
+      filter: saturate(1.1) brightness(1.08);
+      transform: translateY(-2px);
+      box-shadow:
+        inset 0 2px 0 rgba(255, 255, 255, .44),
+        0 0 46px rgba(179, 0, 255, .92);
+    }
+
+    .button:active {
+      transform: translateY(1px) scale(.99);
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% {
+        box-shadow:
+          inset 0 2px 0 rgba(255, 255, 255, .38),
+          0 0 30px rgba(179, 0, 255, .62);
+      }
+      50% {
+        box-shadow:
+          inset 0 2px 0 rgba(255, 255, 255, .5),
+          0 0 54px rgba(220, 84, 255, .95);
+      }
+    }
+
+    @keyframes shine {
+      0%, 42% {
+        transform: translateX(-72%) rotate(16deg);
+      }
+      68%, 100% {
+        transform: translateX(72%) rotate(16deg);
+      }
+    }
+
+    @keyframes arrowNudge {
+      0%, 100% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(5px);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .button,
+      .button::before,
+      .button::after,
+      .topbar__cta::after,
+      .cta-image-link {
+        animation: none;
+      }
+    }
+
+    .sticky-cta {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 40;
+      padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+      border-top: 1px solid rgba(255, 255, 255, .12);
+      background: rgba(3, 2, 7, .88);
+      backdrop-filter: blur(18px);
+      overflow: hidden;
+    }
+
+    .sticky-cta__inner {
+      width: 100%;
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .sticky-cta__text {
+      min-width: 0;
+      font-family: "Yu Gothic", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.35;
+      color: var(--gold);
+    }
+
+    .sticky-cta .button {
+      width: auto;
+      min-height: 44px;
+      padding: 0 18px;
+      font-size: 15px;
+      white-space: nowrap;
+    }
+
+    @media (min-width: 865px) {
+      .lp-stack {
+        margin-top: 18px;
+        border: 1px solid rgba(255, 255, 255, .08);
+        border-radius: var(--radius);
+        overflow: hidden;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .topbar__inner {
+        min-height: 52px;
+        gap: 10px;
+      }
+
+      .brand {
+        font-size: 12px;
+      }
+
+      .topbar__cta {
+        min-height: 34px;
+        padding-inline: 12px;
+        font-size: 12px;
+        max-width: 132px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .final-action {
+        margin-top: 16px;
+        padding: 14px 12px;
+      }
+
+      .sticky-cta__inner {
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 8px;
+      }
+
+      .sticky-cta__text {
+        font-size: 10px;
+        text-align: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .sticky-cta .button {
+        width: 104px;
+        flex: 0 0 104px;
+        min-height: 38px;
+        padding-inline: 10px;
+        font-size: 12px;
+      }
+
+      .sticky-cta .button::before {
+        margin-right: .35em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="topbar" aria-label="固定ヘッダー">
+      <div class="topbar__inner">
+        <a class="brand" href="#top">Codex完全セミナー</a>
+        <a class="topbar__cta" href="https://square.link/u/yOu3gvgL" target="_blank" rel="noopener noreferrer">5月16日限定</a>
+      </div>
+    </header>
+
+    <main class="lp-stack" id="top">
+      <section class="lp-section" aria-label="ファーストビュー">
+        <img class="lp-image" src="assets/lp-hero-top.png" width="864" height="1521" alt="Codex教材購入者限定セミナー。これを受ける人と受けない人の差は本当に広がります。" fetchpriority="high" decoding="async">
+        <a class="cta-image-link hero" href="https://square.link/u/yOu3gvgL" target="_blank" rel="noopener noreferrer" aria-label="Square決済ページで今すぐ参加する">
+          <img src="assets/cta-hero.png" width="778" height="155" alt="今すぐ参加する">
+        </a>
+        <img class="lp-image" src="assets/lp-hero-bottom.png" width="864" height="145" alt="初心者でも安心。実務に落とし込むまでしっかりサポートします。" decoding="async">
+      </section>
+
+      <section class="lp-section" aria-label="保存して終わる人への警鐘">
+        <img class="lp-image" src="assets/lp-02.png" width="864" height="1821" alt="保存して終わる人、もう危ないです。情報を知って終わりにしている限り未来は変わりません。" loading="lazy" decoding="async">
+      </section>
+
+      <section class="lp-section" aria-label="Codexは目的ではなく手段">
+        <img class="lp-image" src="assets/lp-03.png" width="864" height="1821" alt="Codexは目的じゃない。手段です。目的から逆算して実務に落とし込むことが大切です。" loading="lazy" decoding="async">
+      </section>
+
+      <section class="lp-section" aria-label="目的確認">
+        <img class="lp-image" src="assets/lp-offer-top.png" width="864" height="1643" alt="そもそも何がしたいんですか。SNSにいる目的を忘れず、収益化、時間、商品づくり、発信へつなげる。" loading="lazy" decoding="async">
+        <a class="cta-image-link offer" href="https://square.link/u/yOu3gvgL" target="_blank" rel="noopener noreferrer" aria-label="Square決済ページで今すぐ参加する">
+          <img src="assets/cta-offer.png" width="622" height="127" alt="今すぐ参加する">
+        </a>
+        <img class="lp-image" src="assets/lp-offer-bottom.png" width="864" height="51" alt="" loading="lazy" decoding="async">
+      </section>
+
+      <section class="lp-section" aria-label="できていない現実">
+        <img class="lp-image" src="assets/lp-05.png" width="1024" height="1536" alt="できてないじゃん、って話です。問題は才能ではなく実務に落としていないこと。" loading="lazy" decoding="async">
+      </section>
+
+      <section class="lp-section" aria-label="受講後の変化">
+        <img class="lp-image" src="assets/lp-06.png" width="864" height="1821" alt="正しいセミナーを受けるとここまで変われる。投稿、商品、画像、自動化、時間、売上がつながる。" loading="lazy" decoding="async">
+      </section>
+
+      <section class="lp-section" id="offer" aria-label="セミナー内容と価格">
+        <img class="lp-image" src="assets/lp-07.png" width="864" height="1821" alt="Codex完全セミナーで得られること。5月16日限定、購入者限定、価格9,800円税込。" loading="lazy" decoding="async">
+      </section>
+    </main>
+
+    <section class="final-action" aria-label="参加導線">
+      <p class="final-action__copy">Codexを知って終わる側から、実務に落として回せる側へ。</p>
+      <a class="button" href="https://square.link/u/yOu3gvgL" target="_blank" rel="noopener noreferrer">今すぐ参加する</a>
+    </section>
+  </div>
+
+  <div class="sticky-cta" aria-label="固定参加ボタン">
+    <div class="sticky-cta__inner">
+      <div class="sticky-cta__text">5月16日限定 / Codex教材購入者限定 / 9,800円</div>
+      <a class="button" href="https://square.link/u/yOu3gvgL" target="_blank" rel="noopener noreferrer">参加する</a>
+    </div>
+  </div>
+</body>
+</html>
